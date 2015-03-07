@@ -1,0 +1,44 @@
+@(appId: String, loginUrl: String, logoutUrl: String, simbaUrl: String, accountsUrl: String, yourAccountUrl: String, gaiaRoot: String)
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="&#x2F;assets&#x2F;stylesheets&#x2F;tools&#x2F;trial_participants.css" rel="stylesheet" type="text/css">
+    <title>SAMI Trial Participant Tool</title>
+    <link rel="icon" href="@routes.Assets.at("images/tools/favicon.ico")">
+  </head>
+  <body>
+    <div id="root" />
+    <script src="@routes.Assets.at("javascripts/tools/app.js")"></script>
+    <script
+      data-login-url="@loginUrl"
+      data-logout-url="@logoutUrl"
+      data-app-id="@appId"
+      data-simba-url="@simbaUrl"
+      data-gaia-root="@gaiaRoot"
+      data-accounts-url="@accountsUrl"
+      data-your-account-url="@yourAccountUrl"
+      class="appScript">
+      window.onload = function() {
+        var script = document.querySelector("script.appScript");
+        var data = script.dataset;
+
+        // ie9fix
+        if(!data){
+          data = {
+            appName: script.getAttribute('data-app-name'),
+            gaiaRoot: script.getAttribute('data-gaia-root'),
+            accountsUrl: script.getAttribute('data-accounts-url'),
+            loginUrl: script.getAttribute('data-login-url'),
+            logoutUrl: script.getAttribute('data-logout-url'),
+            appId: script.getAttribute('data-app-id'),
+            simbaUrl: script.getAttribute('data-simba-url'),
+            yourAccountUrl: script.getAttribute('data-your-account-url')
+          };
+        }
+
+        bootStrap(data);
+      }
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,56 @@
+.back-frame {
+  width: 100%;
+
+  .frame-heading {
+    padding: 6px 0;
+    background: #47535D;
+    text-transform: uppercase;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    position: relative;
+    text-align: center;
+
+    .frame-back {
+      @extend .icon-back;
+      position: absolute;
+      top: 4px;
+      left: 49px;
+      display: inline-block;
+      color: inherit;
+      @include at-media("only screen and (max-width: 720px)") {
+        overflow: hidden;
+        width: 25px;
+        height: 26px;
+      }
+      &:before {
+        font-size: 25px;
+        vertical-align: -8px;
+        margin-right: 8px;
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+
+    .frame-title {
+      display: inline-block;
+      line-height: 24px;
+    }
+
+    .frame-user {
+      @extend .icon-user;
+      display: inline-block;
+      margin-left: 6px;
+      &:before {
+        font-size: 22px;
+        vertical-align: -6px;
+        margin-right: 6px;
+      }
+    }
+  }
+
+  > iframe {
+    width: 100%;
+    display: block;
+  }
+}

@@ -1,0 +1,27 @@
+@import "base";
+@import "fonts";
+@import "global";
+@import "rules";
+
+%trial-participants-styles {
+  @extend %layout;
+
+  .trial-participants-index { @extend %trial-participants-index; }
+  .trial-participant-detail { @extend %trial-participant-detail; }
+  .trial-participants-landing { @extend %trial-participants-landing; }
+
+  .edit-device-id { display: none; }
+  
+  .edit-device-form {
+    @extend %edit-device-form;
+    .edit-device-tokens { display: none; }
+  }
+
+  .simband-config-steps { @extend %simband-config-steps; }
+
+  form { @extend %form; }
+
+  .enter-pin-form { @extend %enter-pin-form; }
+}
+
+#root { @extend %trial-participants-styles; }

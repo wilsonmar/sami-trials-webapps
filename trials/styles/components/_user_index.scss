@@ -1,0 +1,79 @@
+%user-index {
+  @extend %default-full-height;
+
+  h2 { @extend %medium-title; }
+
+  .view-data {
+    @extend %view-data;
+    font-size: 16px;
+    float: right;
+  }
+
+  &.connect-devices {
+    height: 100%;
+    .large-title {
+      @extend %large-title;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 27px;
+      max-width: 600px;
+    }
+
+    .search {
+      @extend %chosen-icon-search;
+    }
+
+    .submit-button {
+      width: 230px;
+    }
+  }
+
+  &.devices {
+    .device-list {
+      padding: 35px 45px;
+
+      > ul {
+        @extend %list-reset, %grid-container;
+        > li {
+          @extend %grid-item, %clearfix;
+          @extend %bordered, %rounded, %box-shadow;
+          position: relative;
+        }
+
+        .connect-device {
+          display: block;
+          min-height: 123px;
+          text-align: center;
+          padding: 50px 0;
+          .device-title {
+            font-size: 20px;
+            color: #00A9E0;
+          }
+        }
+
+        .device { @extend %device; }
+      }
+
+      .device-tip {
+        @include icon(tip-arrow, before);
+        position: absolute;
+        top: 123px;
+        padding-top: 20px;
+        left: 22px;
+        width: 372px;
+        font-weight: 200;
+        &:before {
+          color: #00A9E0;
+          font-size: 23px;
+          vertical-align: 3px;
+          margin-right: 8px;
+        }
+        b {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

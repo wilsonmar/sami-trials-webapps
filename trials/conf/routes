@@ -1,0 +1,4 @@
+GET     /      controllers.Main.main
+GET     /authorize   controllers.Main.authorize
+
+GET     /assets/*file                         controllers.Assets.at(path="/public", file)

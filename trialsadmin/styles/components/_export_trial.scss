@@ -1,0 +1,203 @@
+%export-trial {
+    .datepicker-container {
+        position: relative;
+        margin-top: 7px;
+        padding: 7px 34px 7px 0px;
+        color: #79808A;
+        cursor: pointer;
+        border: #C1C0C0 1px solid;
+        @include border-radius(3px);
+        background-color: white;
+        background-image: -webkit-linear-gradient(top, white, #E1E0E0);
+        background-image: linear-gradient(to bottom, white, #E1E0E0);
+        box-shadow: 0px 0px 1px #FFF inset, 1px 1px 3px #CDCDCD;
+        .upArrow,
+        .downArrow {
+            position: absolute;
+            border: none;
+            background: none;
+            right: 9px;
+            font-size: 36px;
+        }
+        .upArrow {
+            top: 4px;
+        }
+        .downArrow {
+            right: 10px;
+            top: 14px;
+        }
+        span.dt,
+        span.tm {
+            padding-left: 10px;
+        }
+        input,
+        button {
+            width: 1px;
+            opacity: 0;
+            padding: 0;
+            cursor: pointer;
+        }
+    }
+    .panel-title {
+        color: #79808A;
+    }
+    .errors {
+        display: inline;
+        color: #F67089;
+        margin-top: -10px;
+        font-size: small;
+        margin-bottom: 10px;
+        height: 18px;
+    }
+    .date-range-selector-container {
+        > div {
+            display: inline-block;
+        }
+        .errors {
+            display: block;
+        }
+    }
+    .separator {
+        margin: 0 15px;
+        position: relative;
+        top: 0px;
+        font-weight: 600;
+        color: #949AA2;
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 1.5px;
+    }
+    .range-selector {
+        margin-bottom: 20px;
+
+        label {
+            display: block;
+            text-transform: uppercase;
+            font-size: 13px;
+            color: #949AA2;
+            font-weight: 600;
+            margin-bottom: 5px;
+            letter-spacing: 1.5px;
+        }
+        input {
+            width: 100%;
+            position: absolute;
+            z-index:2;
+            @include source-sans;
+            font-size: 16px;
+            font-weight: normal;
+        }
+    }
+    .filters-list {
+        padding: 0;
+        list-style: none;
+        margin: 0 0 25px 0;
+    }
+    .format-data{
+        height: 83px;
+    }
+    .format-header{
+        display: block;
+        text-transform: uppercase;
+        font-size: 13px;
+        color: #949AA2;
+        font-weight: 600;
+        margin-bottom: 10px;
+        letter-spacing: 1.5px;
+    }
+    .format-list{
+        padding: 0;
+        list-style: none;
+        margin: 0 0 25px 0;
+
+        li{
+            display: inline-block;
+            width: 100px;
+            float: left;
+        }
+    }
+    .filter {
+        @extend %box-shadow;
+        border: 1px solid #E1E4E6;
+        @include border-radius(3px);
+        margin-bottom: 7px;
+        padding: 6px 15px;
+        font-size: 16px;
+
+        input[type="checkbox"] {
+            width: auto;
+        }
+    }
+    .device-type-filters-list {
+        margin: 5px 0;
+        list-style: none;
+        padding: 0 0 0 15px;
+    }
+    .device-type-filter {
+        margin-top: 10px;
+    }
+
+    .exportTrialDate {
+        float: left;
+        height: 65px;
+        + span {
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: bold;
+            padding-left: 5px;
+            height: 15px;
+            float: left;
+            padding: 37px 12px 5px;
+            + .exportTrialDate + * {
+                margin-top: 85px;
+            }
+        }
+
+        label {
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: bold;
+            padding-left: 2px;
+        }
+
+    }
+
+    .by-user-filter {
+        @extend %uses-chosen;
+        > div > div {
+            margin: 10px 10px;
+            @extend %chosen-icon-search;
+            input[type=text] {
+                padding: 8px 40px 8px 10px;
+                font-size: 14px;
+                border-radius: 3px;
+                border: 1px solid #CDCDCD;
+                width: 100%;
+                color: #79808A;
+            }
+            .chosen-drop {
+                background: none;
+                .chosen-results li {
+                    background: white;
+                    &.highlighted {
+                        background: #00A9E0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#ui-datepicker-div {
+    @include source-sans;
+    box-shadow: 5px 5px 10px #CCC;
+    .ui-datepicker-calendar {
+        text-transform: uppercase;
+        td {
+            padding: 0;
+        }
+    }
+    .ui-timepicker-div select.ui-timepicker-select {
+        @include source-sans;
+    }
+}

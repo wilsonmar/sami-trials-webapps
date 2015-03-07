@@ -1,0 +1,51 @@
+%ui-timepicker {
+    margin-left: 5px;
+
+  dl {
+    margin: 0;
+    dt {
+      display: none;
+    }
+    dd {
+      border: none;
+      padding: 0;
+
+      > div:before {
+        content: ':';
+        margin-right: 2px
+      }
+      > div {
+        margin-left: 2px;
+      }
+    }
+  }
+
+  dl dd, dl dd div {
+    display: inline-block;
+    float: none;
+    margin: auto;
+    margin-left: 1px;
+    width: auto;
+  }
+  select.ui-timepicker-select {
+      width: 45px;
+      color: #79808A;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 3px 0 3px 3px;
+      margin-left: 1px;
+      font-size: 13px;
+      height: 25px;
+  }
+  .ui_tpicker_time {
+    display: none;
+  }
+  .ui_tpicker_hour_slider {
+    select.ui-timepicker-select {
+      width: 75px;
+    }
+    &:before {
+      content: none;
+    }
+  }
+}

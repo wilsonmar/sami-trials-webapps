@@ -1,0 +1,14 @@
+%app-index{
+  @extend %padded-content;
+  max-width: 1184px;
+  margin: 0 auto;
+  overflow: hidden;
+
+  .add-button{
+    text-transform: none;
+    padding: 9px;
+    letter-spacing: normal;
+    margin-bottom: 22px;
+  }
+
+}

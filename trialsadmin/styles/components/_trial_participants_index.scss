@@ -1,0 +1,37 @@
+%trial-participants-index {
+  @extend %default-full-height;
+
+  .trial-list {
+    padding: 30px 48px;
+    h2 { @extend %medium-title; }
+
+    ul{
+      @extend %list-reset, %grid-container;
+      > li {
+        @extend %two-col-grid-item, %clearfix;
+        @extend %bordered, %rounded, %box-shadow;
+      }
+    }
+
+    .trial {
+      display: block;
+      min-height: 243px;
+      padding: 37px 35px;
+      .trial-title {
+        @extend %large-title;
+        word-wrap: break-word;
+      }
+      .trial-date {
+        color: #ccc;
+        font-size: 13px;
+        letter-spacing: 1.6px;
+        margin-bottom: 16px;
+        margin-top: -14px;
+      }
+      .trial-description {
+        color: #79808A;
+        line-height: 27px;
+      }
+    }
+  }
+}

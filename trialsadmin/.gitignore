@@ -1,0 +1,6 @@
+/node
+/node_modules
+/fonts/Icons.*
+/lib
+/public
+/styles/lib/_icons.scss

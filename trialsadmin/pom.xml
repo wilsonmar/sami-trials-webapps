@@ -1,0 +1,135 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.samsung.sami</groupId>
+  <artifactId>trialsadmin</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>SAMI Trials Admin</name>
+  <packaging>play2</packaging>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <maven.compiler.plugin.version>2.3.1</maven.compiler.plugin.version>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+    <play.version>2.2.2</play.version>
+    <play2.home>/opt/play-2.2.2</play2.home>
+    <play2.maven.plugin.version>1.2.4</play2.maven.plugin.version>
+  </properties>
+  <repositories>
+    <repository>
+      <id>typesafe</id>
+      <url>http://repo.typesafe.com/typesafe/releases/</url>
+    </repository>
+    <repository>
+      <id>oss.sonatype.org</id>
+      <name>oss.sonatype.org</name>
+      <url>https://oss.sonatype.org/content/repositories/releases</url>
+    </repository>
+  </repositories>
+  <dependencies>
+    <!-- Play Framework Dependencies -->
+    <dependency>
+      <groupId>com.typesafe.play</groupId>
+      <artifactId>play_2.10</artifactId>
+      <version>${play.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.typesafe.play</groupId>
+      <artifactId>play-test_2.10</artifactId>
+      <version>${play.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- For akka testing -->
+    <dependency>
+      <groupId>com.typesafe.akka</groupId>
+      <artifactId>akka-testkit_2.10</artifactId>
+      <version>2.2.3</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <finalName>trialsadmin</finalName>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.nanoko.playframework</groupId>
+          <artifactId>play2-maven-plugin</artifactId>
+          <version>${play2.maven.plugin.version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven.compiler.plugin.version}</version>
+        <configuration>
+          <debug>true</debug>
+          <debuglevel>lines,vars,source</debuglevel>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
+          <encoding>${project.build.sourceEncoding}</encoding>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.nanoko.playframework</groupId>
+        <artifactId>play2-maven-plugin</artifactId>
+        <version>${play2.maven.plugin.version}</version>
+        <extensions>true</extensions>
+        <configuration>
+          <play2Home>${play2.home}</play2Home>
+          <buildWar>false</buildWar>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.5</version>
+        <configuration>
+          <tagNameFormat>v@{project.version}</tagNameFormat>
+          <autoVersionSubmodules>true</autoVersionSubmodules>
+          <releaseProfiles>releases</releaseProfiles>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>com.github.eirslett</groupId>
+        <artifactId>frontend-maven-plugin</artifactId>
+        <version>0.0.20</version>
+        <configuration>
+          <workingDirectory>.</workingDirectory>
+        </configuration>
+        <executions>
+
+          <execution>
+            <id>install node and npm</id>
+            <goals>
+              <goal>install-node-and-npm</goal>
+            </goals>
+            <configuration>
+              <nodeVersion>v0.10.31</nodeVersion>
+              <npmVersion>1.4.21</npmVersion>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>npm install</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+          </execution>
+
+          <execution>
+            <id>gulp build</id>
+            <goals>
+              <goal>gulp</goal>
+            </goals>
+          </execution>
+
+        </executions>
+      </plugin>
+    </plugins>
+    <!-- Play source directory -->
+    <sourceDirectory>app</sourceDirectory>
+    <testSourceDirectory>test</testSourceDirectory>
+  </build>
+</project>

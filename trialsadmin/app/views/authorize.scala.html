@@ -1,0 +1,23 @@
+@(token: String)
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="@routes.Assets.at("javascripts/tools/app.js")"></script>
+    <script data-token="@token" class="appScript">
+      window.onload = function() {
+        var script = document.querySelector("script.appScript");
+        var data = script.dataset;
+
+        // ie9fix
+        if(!data){
+          data = {
+            token: script.getAttribute('data-token'),
+          };
+        }
+
+        doAuth(data);
+      }
+    </script>
+  </body>
+</html>
+

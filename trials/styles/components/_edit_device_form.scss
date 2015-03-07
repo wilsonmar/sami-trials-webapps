@@ -1,0 +1,40 @@
+%edit-device-form {
+  %spaced-link {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+  }
+  .generate-access-token {
+    @extend %spaced-link;
+    display: block;
+    margin-top: -16px;
+    margin-bottom: 22px;
+  }
+  .revoke-access-token {
+    @extend %spaced-link;
+    color: #F67B91;
+  }
+
+  .label-text {
+    @extend %label-text;
+    color: #949AA2;
+  }
+
+  > ul {
+    @extend %list-reset, %grid-container;
+    > li {
+      @extend %grid-item, %clearfix;
+      font-size: 18px;
+      font-weight: 300;
+      color: #79808A;
+    }
+  }
+  .disconnect-device {
+    color: #D7021B;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    float: right;
+    padding-top: 10px;
+  }
+}

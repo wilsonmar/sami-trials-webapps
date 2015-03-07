@@ -1,0 +1,65 @@
+
+%participants {
+  h2{ @extend %medium-title; }
+
+  .participants-toggle {
+    @extend %radio-set;
+    min-width: 593px;
+  }
+
+  .participants-button{
+    @extend %radio-option;
+    cursor: default;
+  }
+
+  .participants-table {
+    @extend %table;
+    width: 100%;
+  }
+
+  .participant-name {
+    min-width: 314px;
+    a {
+      @include icon('view-data', after);
+      display: block;
+      padding-right: 20px;
+      &:after {
+        font-size: 24px;
+        float: right;
+        margin-right: -23px;
+        margin-top: -3px;
+      }
+    }
+  }
+  .participant-device,
+  .participant-connected,
+  .participant-last-active{
+    ul{
+      @extend %list-reset;
+    }
+    li{
+      margin-bottom: 2px;
+    }
+  }
+  .participant-options {
+    cursor: pointer;
+    span {
+      font-size: 13px;
+      margin-left: 18px;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+    .send {
+      color: #685BC7;
+    }
+    .disabled {
+      color: #ABAFB6;
+      cursor: default;
+    }
+    .revoke {
+      color: #E4002B;
+    }
+  }
+
+}

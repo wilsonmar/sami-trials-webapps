@@ -1,0 +1,117 @@
+%simband-button {
+  @extend %rounded, %button;
+  font-size: 13px;
+  padding: 10px 16px !important;
+}
+
+.simband-landing-copy {
+  display: block;
+  width: 600px;
+  padding: 10px 0 30px 0;
+}
+
+%simband-config {
+
+  .simband-connecting {
+    display: none;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    @extend .icon-device;
+    &:before {
+      display: block;
+      font-size: 134px;
+    }
+    color: #9EDBF1;
+  }
+
+  &.connecting {
+    iframe { display: none; }
+    .simband-connecting { display: block }
+  }
+
+
+  .activate-simband {
+    @extend %bordered, %rounded, %box-shadow;
+    max-width: 500px;
+    margin-bottom: 30px;
+
+    .form-row {
+      margin-bottom: 0 !important;
+    }
+
+    .activation-code {
+      padding: 22px;
+      .form-row{
+        min-width: 333px;
+        float: left;
+      }
+    }
+
+    .activate-button {
+      @extend %simband-button;
+      background-color: #685BC7;
+      margin-left: 22px;
+      margin-top: 20px;
+    }
+  }
+
+  .sign-in-or-register {
+    max-width: 500px;
+    h2 {
+      font-weight: 300;
+    }
+    .warning {
+      @extend .icon-warning;
+      position: relative;
+      background-color: #FCF7E3;
+      color: #FF7E22;
+      padding: 18px 18px 18px 75px;
+      &:before {
+        position: absolute;
+        font-size: 46px;
+        color: #FBE994;
+        margin-top: -23px;
+        top: 50%;
+        left: 16px;
+      }
+    }
+    .sign-in-button {
+      @extend %simband-button;
+      background-color: #00A9E0;
+      text-transform: none !important;
+      margin-top: 10px;
+    }
+  }
+
+  .verified {
+    color: #5CCB88;
+    padding: 4px 0;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1.6px;
+    margin-top: 20px;
+    @extend .icon-check;
+    &:before {
+      font-size: 20px;
+      margin-right: 8px;
+      margin-left: 18px;
+      vertical-align: -4px;
+    }
+  }
+
+  .having-problems-modal {
+    .modal-content {
+      padding-bottom: 70px;
+    }
+  }
+
+  .still-having-problems {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-top: 1px solid #E0E0E0;
+    padding: 22px;
+  }
+}

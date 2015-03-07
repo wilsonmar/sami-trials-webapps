@@ -1,0 +1,22 @@
+@import "fonts";
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+html, body { @extend %reset-box-model; height: 100%; }
+
+body {
+  @include source-sans;
+  color: #79808A;
+}
+
+a, a:visited {
+  color: #00A9E0;
+  text-decoration: none;
+}
+
+
+

@@ -1,0 +1,12 @@
+{
+	"/SAMI/config/accounts/url": "https://accounts.samsungsami.io",
+	"/SAMI/config/api/url": "https://api.samsungsami.io/v1.1",
+	"/SAMI/config/dataviz/url": "https://simba.samsungsami.io"
+	"/SAMI/config/trials-participants/application.name": "Trials Participant",
+	"/SAMI/config/trials-participants/application.description": "SAMI Trials Participant",
+
+	// Instructions on obtaining the following values can be found at https://developer.samsungsami.io/
+	"/SAMI/config/trials-participants/application.id": "YOUR-APPLICATION-ID",
+	"/SAMI/config/trials-participants/client.secret": "YOUR-CLIENT-SECRET",
+	"/SAMI/config/trials-participants/redirect.uri": "YOUR-REDIRECT-URI",
+}

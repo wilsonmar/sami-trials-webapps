@@ -1,0 +1,49 @@
+%trial-participant-detail {
+  h2 { @extend %medium-title; }
+
+  .trial-meta {
+    @extend %clearfix;
+    margin-bottom: 24px;
+    .trial-date {
+      float: left;
+      font-size: 12px;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+    }
+  }
+
+  .admins {
+    @extend %clearfix, %list-with-icon;
+    @include icon(admin);
+    margin-bottom: -140px;
+  }
+
+  .description {
+    color: #79808A;
+    font-size: 16px;
+    line-height: 1.7em;
+    margin-bottom: 25px;
+  }
+
+  .view-data {
+    @extend %view-data;
+    float: right;
+    font-size: 16px;
+    margin-right: 2%;
+  }
+
+  .device { @extend %device; }
+  .device-type { @extend %device-type; }
+
+  %two-col-list {
+    > ul{
+      @extend %list-reset, %grid-container;
+      > li {
+        @extend %two-col-grid-item, %clearfix;
+        @extend %bordered, %rounded, %box-shadow;
+      }
+    }
+  }
+
+  .device-list { @extend %two-col-list; }
+}

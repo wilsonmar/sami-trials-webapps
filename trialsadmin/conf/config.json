@@ -1,0 +1,16 @@
+{
+	"/SAMI/config/accounts/url": "https://accounts.samsungsami.io",
+	"/SAMI/config/api/url": "https://api.samsungsami.io/v1.1",
+	"/SAMI/config/dataviz/url": "https://simba.samsungsami.io",
+	"/SAMI/config/trials-admin/application.name": "Trials Admin",
+	"/SAMI/config/trials-admin/application.description": "SAMI Trials Administration",
+
+	// Instructions on obtaining the following values can be found at https://developer.samsungsami.io/
+	"/SAMI/config/trials-admin/application.id": "YOUR-APPLICATION-ID",
+	"/SAMI/config/trials-admin/client.secret": "YOUR-CLIENT-SECRET",
+	"/SAMI/config/trials-admin/redirect.uri": "YOUR-REDIRECT-URI",
+
+	// Instructions on how to host your own trial applications can be found at https://developer.samsungsami.io/
+	"/SAMI/config/trials-admin/invitationParticipantAcceptUrl": "http://YOUR-TRIALS-URL/#/trial/",
+	"/SAMI/config/trials-admin/invitationAdminAcceptUrl": "http://YOUR-TRIALS-ADMIN-URL/#/trial/"
+}

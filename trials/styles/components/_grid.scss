@@ -1,0 +1,49 @@
+%grid-container {
+  @extend %clearfix;
+}
+
+%grid-item-styles {
+  margin: 0 0 22px 0;
+  vertical-align: top;
+  width: 100%;
+  @include respond-to('tablet') {
+    float: left;
+    &:nth-child(odd){ clear: left; }
+    &:nth-child(even){ margin-right: 0; }
+  }
+  @include respond-to('desktop') {
+    float: left;
+    &:nth-child(even){ margin-right: 2%; }
+    &:nth-child(odd){ clear: none; }
+    &:nth-child(3n){ margin-right: 0; }
+  }
+}
+
+%grid-item {
+  @extend %grid-item-styles;
+
+  @include respond-to('tablet') {
+    margin-right: 4%;
+    width: 48%;
+  }
+  @include respond-to('desktop') {
+    margin-right: 2%;
+    width: 32%;
+    &:nth-child(3n+1){ clear: left; }
+  }
+}
+
+%two-col-grid-item {
+  @extend %grid-item-styles;
+
+  @include respond-to('tablet') {
+    &:nth-child(odd){ clear: none; }
+  }
+  @include respond-to('desktop') {
+    margin-right: 2%;
+    width: 49%;
+    &:nth-child(3n){ margin-right: 2%; }
+    &:nth-child(3n+1){ clear: none; }
+    &:nth-child(even){ margin-right: 0; }
+  }
+}

@@ -1,0 +1,41 @@
+%main-footer{
+  background-color: #F1F3F4;
+  border-top: 1px solid #E1E4E6;
+  color: #ABAFB6;
+  height: $footer-height;
+  margin-top: -$footer-height;
+  overflow: hidden;
+  padding: 32px 48px;
+  position: relative;
+  a {
+    color: inherit;
+  }
+  .blog-link,
+  .feedback-link{
+    position: absolute;
+    top: 38px;
+  }
+  .blog-link{
+    right: 180px;
+  }
+  .feedback-link{
+    right: 48px;
+  }
+  .legal {
+    font-size: 12px;
+    p{
+      margin: 8px 0;
+    }
+    ul {
+      @extend %inline-list, %reset-box-model;
+      font-size: 14px;
+      line-height: 1;
+    }
+    li {
+      margin-right: 8px;
+      padding-right: 8px;
+      border-right: 1px solid;
+      &:last-child{ border-right: none; padding-right: 0; margin-right: 0; }
+    }
+  }
+}

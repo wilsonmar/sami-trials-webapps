@@ -1,0 +1,70 @@
+%dev-index {
+  @extend %default-full-height;
+  padding: 48px 178px;
+
+  %dev-index-section {
+    .title {
+      @extend %medium-title;
+      &:before {
+        vertical-align: -5px;
+        padding-right: 12px;
+      }
+    }
+    .content-box {
+      min-height: 126px;
+      @extend %content-box;
+    }
+  }
+
+  .dev-index-sections {
+    @extend %list-reset, %grid-container;
+    > li {
+      @extend %two-col-grid-item, %clearfix;
+    }
+  }
+
+  .applications {
+    @extend %dev-index-section;
+    margin-bottom: 62px;
+    .content-box { text-align: center; }
+    .create-application-title {
+      font-size: 48px;
+      font-weight: 300;
+      color: #949AA1;
+      margin: 0 0 13px 0;
+    }
+    .create-application-button {
+      @extend %button, %rounded;
+    }
+
+    hr {
+      border: none;
+      background-color: #E0E5E6;
+      height: 1px;
+      margin: 23px auto 13px;
+      max-width: 32em;
+    }
+
+    .add-device-type {
+      font-size: 19px;
+    }
+  }
+  .sdk {
+    @extend %dev-index-section;
+    .content-box {
+      position: relative;
+      padding-bottom: 54px !important;
+      .learn-more {
+        position: absolute;
+        bottom: 22px;
+        left: 22px;
+        display: block;
+        font-size: 12px;
+      }
+    }
+  }
+  .docs {
+    @extend %dev-index-section;
+  }
+
+}

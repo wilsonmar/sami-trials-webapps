@@ -1,0 +1,229 @@
+%devicetype-detail{
+  display: block;
+
+  .devicetype-header {
+    padding: 4px 22px;
+    margin-bottom: 27px;
+    h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+    h2 {
+      font-size: 24px;
+      margin: 0;
+      font-weight: 400;
+    }
+  }
+
+  .button{
+    background: transparent;
+    border: 1px solid #C1C0C0;
+    color: inherit;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 200;
+    margin-bottom: 17px;
+    min-width: 100px;
+    padding: 10px;
+    text-align: center;
+    width: 57%;
+  }
+
+  .devicetype-versions{
+    padding: 0 22px;
+    h3 {
+      font-size: 22px;
+      font-weight: 400;
+      margin: 0 0 6px 0;
+      padding-top: 6px;
+      .button {
+        font-size: 14px;
+        margin-left: 22px;
+        vertical-align: 3px;
+      }
+    }
+    .button{
+      border: 1px solid #00A8E2;
+      color: #00A8E2;
+      font-weight: normal;
+      min-width: none;
+      text-transform: none;
+      width: auto;
+    }
+  }
+
+  .devicetype-version-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .devicetype-version-header {
+    background: #ccc;
+    border: 1px solid #E1E4E6;
+    border-width: 1px 0 1px 0;
+    margin: 0 -45px;
+    padding: 12px 4px 12px 82px;
+    position: relative;
+    background-image: -o-linear-gradient(-89deg, #FFFFFF 0%, #F0F2F4 100%);
+    background-image: -moz-linear-gradient(-89deg, #FFFFFF 0%, #F0F2F4 100%);
+    background-image: -ms-linear-gradient(-89deg, #FFFFFF 0%, #F0F2F4 100%);
+    background-image: linear-gradient(-179deg, #FFFFFF 0%, #F0F2F4 100%);
+  }
+  .version-status{
+    font-size: 14px;
+  }
+  .version{
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2.2px;
+    text-align: center;
+  }
+  .version-status{
+    font-weight: 600;
+    letter-spacing: 2.2px;
+    padding-left: 22px;
+    text-transform: uppercase;
+    &:after{
+      font-size: 16px;
+      margin-left: 6px;
+      vertical-align: -2px;
+    }
+  }
+  .version-timestamp{
+    float: right;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    padding-right: 16px;
+    text-align: right;
+  }
+  [data-status=approved] .devicetype-version-header {
+    background: #75D096;
+  }
+  [data-status=rejected] .devicetype-version-header {
+    background: #FF97A4;
+  }
+  [data-status=rejected], [data-status=approved]{
+    .devicetype-version-header{
+      color: #fff;
+    }
+  }
+  .expanded{
+    .devicetype-details-toggle{
+      transform: rotate(0deg);
+    }
+  }
+  .devicetype-details-toggle{
+    color: inherit;
+    display: block;
+    font-size: 7px;
+    left: 46px;
+    position: absolute;
+    top: 22px;
+    transform: rotate(-90deg);
+    transition: all .2s ease-out;
+  }
+  .devicetype-version-details{
+    padding: 8px 0;
+  }
+  h5{
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    font-weight: 600;
+    margin: 20px 0 16px 0;
+  }
+
+  .help-link {
+    text-transform: none;
+    margin-left: 15px;
+  }
+
+  .devicetype-manifest{
+    @extend %rounded;
+    border: 1px solid #CDCDCD;
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 57%;
+    min-height: 130px;
+    pre{
+      padding: 0;
+      margin: 10px;
+      overflow: scroll;
+      min-height: 110px;
+    }
+  }
+
+  .devicetype-rejections{
+    list-style-type: disc;
+    margin: 0 0 1.6em 0;
+    padding-left: 1.1em;
+  }
+  .devicetype-sidebar{
+    h5{
+      font-size: 20px;
+      font-weight: 400;
+      margin: 0;
+    }
+    .devicetype-version{
+      color: #00B339;
+      font-size: 37px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      margin-bottom: 14px;
+    }
+    .devicetype-published-status{
+      font-size: 37px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+    }
+    .enabled-button{
+      background: #fff;
+      border: 1px solid #00A9E0;
+      color: #00A8E2;
+    }
+
+    .hint {
+      color: #C7CACE;
+      padding-left: 48px;
+      position: relative;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      font-size: 12px;
+      i {
+        background: #FFC601;
+        border-radius: 50%;
+        color: #000;
+        font-size: 17px;
+        height: 35px;
+        left: 0;
+        line-height: 35px;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        width: 35px;
+        text-align: center;
+      }
+    }
+  }
+
+  .devicetype-sidebar-content{
+    padding: 27px 32px;
+  }
+
+  .edit-device-type-link {
+    @include icon(edit);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    margin-left: 20px;
+    vertical-align: 3px;
+    &:before {
+      font-size: 25px;
+      margin-right: 6px;
+      vertical-align: -7px;
+    }
+  }
+}

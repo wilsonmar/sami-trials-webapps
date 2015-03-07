@@ -1,0 +1,49 @@
+%button {
+  @include source-sans;
+  background: #00A9E0;
+  border: none;
+  color: #fff;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  line-height: 1em;
+  margin: 0;
+  padding: 12px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+%radio-set {
+  @include border-radius(4px);
+}
+
+%radio-option {
+  border: 1px solid #685BC7;
+  color: #685BC7;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1.6px;
+  margin-bottom: 34px;
+  padding: 8px 14px 9px 14px;
+  &.active {
+    background-color: #685BC7;
+    color: white;
+  }
+  i {
+    font-size: 20px;
+    margin-right: 8px;
+    line-height: 0;
+    vertical-align: middle;
+  }
+  &:first-child{
+    border-radius: 4px 0 0 4px;
+    border-right: none;
+  }
+  &:last-child{
+    border-radius: 0 4px 4px 0;
+    border-left: none;
+  }
+}

@@ -1,0 +1,72 @@
+%dev-dashboard {
+  @extend %three-col-container, %padded-content;
+  .status-list{ @extend %list-reset; }
+
+  .device-card{
+    .status-list{
+      margin-top: 28px;
+      margin-left: -100px;
+      margin-right: -35px;
+      margin-bottom: -22px;
+      .status{
+        padding: 22px 10px 20px 10px;
+        color: #ffffff;
+        overflow: hidden;
+      }
+      span{
+        display: block;
+        float: left;
+        text-align: left;
+      }
+      .version{
+        width: 10%;
+        text-align: center;
+        font-size: 16px;
+      }
+      .version-status{
+        width: 40%;
+        text-transform: uppercase;
+        letter-spacing: 2.2px;
+        padding-left: 22px;
+        font-weight: 600;
+        &:after{
+          margin-left: 6px;
+          vertical-align: -2px;
+          font-size: 16px;
+        }
+      }
+      .version-timestamp{
+        width: 50%;
+        text-align: right;
+        font-weight: 600;
+        letter-spacing: 1.6px;
+        padding-right: 16px;
+        font-size: 13px;
+
+      }
+      [data-status=approved]{
+        background: #75D096;
+        .version-status{
+          @include icon('check', after);
+        }
+      }
+      [data-status=pending]{
+        background-color: #ABAFB6;
+      }
+      [data-status=rejected]{
+        background: #FF97A4;
+        .version-status{
+          @include icon('reject', after);
+        }
+      }
+    }
+  }
+
+  .add-button{
+    float: right;
+    text-transform: none;
+    font-size: 16px;
+    padding: 8px 8px 10px 8px;
+    letter-spacing: normal;
+  }
+}

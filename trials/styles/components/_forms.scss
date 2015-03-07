@@ -1,0 +1,124 @@
+%form {
+  .submit-button, .cancel-button {
+    @extend %rounded, %button;
+    font-size: 12px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    min-width: 140px;
+  }
+  .cancel-button {
+    background: #D8D8D8;
+    color: #949AA2;
+  }
+  .form-row {
+    @extend %form-row;
+  }
+}
+
+%form-inputs {
+  padding: 8px 40px 8px 10px;
+  font-size: 14px;
+  border-radius: 3px;
+  border: 1px solid #CDCDCD;
+  width: 100%;
+  color: #79808A;
+}
+
+%form-row {
+  @extend %uses-chosen;
+  display: block;
+  margin-bottom: 35px;
+  position: relative;
+  max-width: 500px;
+  color: #949AA2;
+  .label-text {
+    @extend %label-text;
+  }
+  .remaining-text {
+    position: relative;
+    span {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      color: #34404C;
+      opacity: 0.25;
+      font-size: 14px;
+    }
+  }
+
+  input[type="text"], select, textarea {
+    @extend %form-inputs;
+  }
+
+  .form-radio {
+    margin-top: 13px;
+  }
+
+  input[type="radio"] {
+    display: none;
+    + label {
+      &:before {
+        border: 3px solid white;
+        box-shadow: 0 0 0 1px #CDCDCD;
+        background-color: white;
+        width: 8px;
+        height: 8px;
+        content: '';
+        display: inline-block;
+        border-radius: 16px;
+        margin-right: 13px;
+      }
+    }
+    &:checked + label:before {
+      background-color: #2FA9E0;
+    }
+  }
+
+  input[type="checkbox"] {
+    visibility: hidden;
+    width: 30px;
+    + label {
+      &:before {
+        border: 3px solid white;
+        box-shadow: 0 0 0 1px #CDCDCD;
+        background-color: white;
+        width: 8px;
+        height: 8px;
+        content: '';
+        display: inline-block;
+        margin-right: 13px;
+        vertical-align: -2px;
+      }
+    }
+    &:checked + label:before {
+      background-color: #2FA9E0;
+    }
+  }
+
+
+  textarea {
+    line-height: 24px;
+    resize: none;
+    display: block;
+  }
+
+  .error {
+    input, textarea {
+      border-color: #ED002E;
+      outline: none;
+    }
+    .errors {
+      background-color: #F67089;
+      border-radius: 3px 3px 0 0;
+      color: white;
+      font-size: 12px;
+      left: 0;
+      padding: 6px 8px;
+      position: absolute;
+      right: 0;
+      top: -8px;
+      border: 1px solid #ED002E;
+    }
+  }
+}
+

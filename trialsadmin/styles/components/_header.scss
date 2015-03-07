@@ -1,0 +1,124 @@
+%main-header {
+  background-color: #323f4a;
+  color: #ffffff;
+  position: relative;
+  a{
+    color: #ffffff;
+  }
+}
+
+%logo-container {
+  background: url('/assets/images/tools/sami-logo.png') no-repeat center center;
+  display: inline-block;
+  height: 64px;
+  margin: 0 18px 0 0;
+  vertical-align: middle;
+  width: 166px;
+  @include just-for('retina'){
+    background-image: url('/assets/images/tools/sami-logo@2x.png');
+    background-size: 168px 64px;
+  }
+  a {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+%main-nav {
+  padding: 7px 200px 7px 24px;
+  position: relative;
+  > ul {
+    @extend %inline-list, %reset-box-model;
+    li {
+      padding: 10px;
+      line-height: 0.5em;
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+%navigation-link {
+  @include opacity(0.5);
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  font-size: 13px;
+  &:before{
+    display: inline-block;
+    font-size: 26px;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: -4px;
+    vertical-align: -8px;
+  }
+  &.active {
+    @include opacity(1);
+    font-weight: 600;
+    &:before{
+    }
+  }
+  &.trials{
+    @extend .icon-stopwatch;
+    &:before{
+      font-weight: bold;
+    }
+  }
+  &.participants{
+    @extend .icon-users;
+    &:before{
+      font-size: 19px;
+      vertical-align: -4px;
+    }
+  }
+
+  &.device-types{
+    @extend .icon-device;
+    &:before{
+      font-size: 27px;
+      vertical-align: -7px;
+    }
+  }
+
+  &.applications{
+    @extend .icon-app;
+    &:before{
+      font-size: 22px;
+      vertical-align: -7px;
+    }
+  }
+  &.developer{
+    @extend .icon-dev;
+    &:before{
+      font-size: 22px;
+      vertical-align: -7px;
+    }
+  }
+}
+
+%user-menu {
+  &.has-items {
+    @extend %dropdown-menu;
+  }
+  $icon-size: 36px;
+  padding-left: $icon-size;
+  position: absolute;
+  right: 21px;
+  top: 26px;
+  padding-right: 24px;
+  .name, .sign-in {
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    font-size: 14px;
+    padding-top: 5px;
+    cursor: pointer;
+  }
+  &:before {
+    @extend .icon-user;
+    float: left;
+    font-size: 26px;
+    margin-left: -$icon-size;
+    line-height: 1;
+  }
+}

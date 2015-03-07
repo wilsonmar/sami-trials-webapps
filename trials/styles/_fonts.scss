@@ -1,0 +1,30 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Source+Code+Pro|Source+Serif+Pro);
+
+@mixin source-sans($alternates: "'Helvetica Neue', 'Arial', sans-serif"){
+  $font-family: "'Source Sans Pro', #{$alternates}";
+  font-family: unquote($font-family);
+}
+
+@mixin meta-font-face($name, $variant){
+  // first for IE 4–8
+  @font-face {
+    font-family: #{$name}-#{$variant};
+    src: url("/fonts/tools/#{$name}-#{$variant}.eot");
+  }
+  // then for WOFF-capable browsers
+  @font-face {
+    font-family: #{$name}-#{$variant};
+    src: url("/fonts/tools/#{$name}-#{$variant}.woff") format("woff");
+  }
+}
+
+
+$meta-font-names: 'MetaSerifWeb', 'MetaSerifScWeb';
+$meta-font-variants: 'Black', 'BlackItalic', 'Bold', 'BoldItalic', 'Book', 'BookItalic', 'Extrabold', 'ExtraboldItalic', 'Light', 'LightItalic', 'Medium', 'MediumItalic';
+
+@each $name in $meta-font-names{
+  @each $variant in $meta-font-variants{
+    @include meta-font-face($name,$variant);
+  }
+}

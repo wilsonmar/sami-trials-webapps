@@ -1,0 +1,33 @@
+@import "lib/respond-to";
+@import "lib/icons";
+
+$handheld-min: 240px;
+$handheld-max: 568px;
+
+$tablet-min: $handheld-max + 1;
+$tablet-max: 1024px;
+
+$desktop-min: $tablet-max + 1;
+$desktop-max: 1440px;
+
+$large-desktop-min:  $desktop-max + 1;
+
+$footer-height: 100px;
+
+@mixin opacity($amount) {
+  opacity: $amount;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin border-top-radius($radius) {
+  border-top-right-radius: $radius;
+  border-top-left-radius: $radius;
+}
+
+@mixin border-bottom-radius($radius) {
+  border-bottom-right-radius: $radius;
+  border-bottom-left-radius: $radius;
+}

@@ -1,0 +1,53 @@
+%application-form {
+  .profile {
+    margin-bottom: 15px;
+  }
+
+  .selected-devices {
+    @extend %list-reset;
+    > li {
+      @extend %bordered, %rounded, %box-shadow;
+      margin-bottom: 18px;
+      padding: 15px;
+
+    }
+  }
+
+  .trash-button {
+    @extend .icon-trash;
+    color: red;
+    float: right;
+    font-size: 26px;
+    margin-top: -4px;
+  }
+
+  .add-device-button {
+    @extend %rounded, .icon-plus;
+    background: transparent;
+    border: 1px solid #2FA9E0;
+    color: #2FA9E0;
+    padding: 8px 10px 8px 6px;
+    font-size: 15px;
+    display: inline-block;
+    margin-top: 15px;
+    cursor: default;
+    &:before {
+      background-color: #2FA9E0;
+      border-radius: 16px;
+      padding: 6px;
+      color: white;
+      font-size: 12px;
+      vertical-align: -1px;
+      margin-right: 12px;
+    }
+  }
+
+  .search {
+    @extend %chosen-icon-search;
+
+    &.hide {
+      overflow: hidden;
+      height: 0;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.pagination-controls {
+  margin-top: 18px;
+
+  .paginate-prev, .paginate-next {
+    &.disabled {
+      color: #C7CACE;
+      cursor: default;
+    }
+  }
+
+  .paginate-current {
+    background-color: #685BC7;
+    color: white;
+  }
+
+  ol {
+    @extend %list-reset, %inline-list;
+    li {
+      @extend %rounded;
+      padding: 4px 6px;
+      color: #00A9E0;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+    }
+  }
+}

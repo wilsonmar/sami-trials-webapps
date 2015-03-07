@@ -1,0 +1,53 @@
+%animate-ellipses {
+  $class-names: one two three;
+  $delays: 0.0s 0.2s 0.3s;
+  @each $number in $class-names {
+    $index: index($class-names, $number);
+    .#{$number} {
+      opacity: 0;
+
+      $anim: dot 1.3s infinite;
+      -webkit-animation: $anim;
+      -moz-animation: $anim;
+      -o-animation: $anim;
+      animation: $anim;
+
+      $delay: nth($delays, $index);
+      -webkit-animation-delay: $delay;
+      -moz-animation-delay: $delay;
+      -o-animation-delay: $delay;
+      animation-delay: $delay;
+    }
+  }
+}
+
+@-webkit-keyframes dot {
+  0% { opacity: 0; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes dot {
+  0% { opacity: 0; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes dot {
+  0% { opacity: 0; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes dot {
+  0% { opacity: 0; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+%enter-pin-form {
+  .submit-button {
+    &.connecting { @extend %animate-ellipses; }
+  }
+}
