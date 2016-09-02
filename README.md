@@ -21,10 +21,14 @@ $ mvn install
 
 ## CONFIGURATION
 
-Create applications via the [SAMI Developer Portal](https://devportal.samsungsami.io) and provide the configuration in conf/config.json
+NOTE: "ARTIK" superceds "SAMI".
+
+Create applications at the <a target="_blank" href="https://developer.artik.cloud/dashboard">
+ARTIK Cloud Dashboard</a> and provide the configuration in conf/config.json
 
 ## SUPPORT
 
-* Follow us on Twitter at <https://twitter.com/samsungsamiio>
-* Visit <https://developer.samsungsami.io> for documentation and API reference
+* Follow us on Twitter at <https://twitter.com/@ARTIKCLoud/> and <https://twitter.com/@SamsungIoT/>
+* Visit the <a target="_blank" href="https://developer.artik.cloud/api-console">API reference</a>
+* See videos on the <a target="_blank" href="https://www.youtube.com/channel/UCkDAwuCKUcY1qn-hgNv0kLw">samsung_dev YouTube channel</a>
 * Use Github Issues for bugs and feature requests and make pull requests to participate in the development
